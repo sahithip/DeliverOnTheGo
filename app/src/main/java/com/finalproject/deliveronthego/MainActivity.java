@@ -26,9 +26,9 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(this, firstPage.class);
         startActivity(intent);
     }
-    public void signUp(View view)
+    public void registration(View view)
     {
-        Intent intent = new Intent(this, SignUp.class);
+        Intent intent = new Intent(this, Registration.class);
         startActivity(intent);
     }
 

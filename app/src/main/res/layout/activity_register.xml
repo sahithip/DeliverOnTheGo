@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"></FrameLayout>
+
+    <FrameLayout
+        android:layout_width="251dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"></FrameLayout>
+
+    <FrameLayout
+        android:layout_width="283dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"></FrameLayout>
+
+    <FrameLayout
+        android:layout_width="319dp"
+        android:layout_height="316dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:id="@+id/registerLayout">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register as User"
+            android:id="@+id/registerAsUser"
+            android:layout_gravity="center_horizontal|top"
+            android:onClick="registerAsUser" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register as Driver"
+            android:id="@+id/registerAsDriver"
+            android:layout_gravity="center"
+            android:onClick="registerAsDriver" />
+    </FrameLayout>
+
+</LinearLayout>

@@ -8,19 +8,19 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-public class SignUp extends Activity {
+public class SignUpDriver extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.activity_sign_up_driver);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_sign_up, menu);
+        getMenuInflater().inflate(R.menu.menu_sign_up_driver, menu);
         return true;
     }
 
@@ -39,10 +39,10 @@ public class SignUp extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void signUpUser(View view) {
+
+    public void signUpDriver(View view)
+    {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-
-
 }

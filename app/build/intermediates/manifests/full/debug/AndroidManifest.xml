@@ -8,14 +8,6 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="18" />
 
-    <android:uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        android:maxSdkVersion="18" />
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <android:uses-permission
-        android:name="android.permission.READ_EXTERNAL_STORAGE"
-        android:maxSdkVersion="18" />
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -31,15 +23,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.finalproject.deliveronthego.SignInSuccess"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="com.finalproject.deliveronthego.SignInSuccess" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name="com.finalproject.deliveronthego.firstPage"
             android:label="@string/title_activity_first_page"
             android:parentActivityName="com.finalproject.deliveronthego.MainActivity" >
@@ -48,12 +31,28 @@
                 android:value="com.finalproject.deliveronthego.MainActivity" />
         </activity>
         <activity
-            android:name="com.finalproject.deliveronthego.SignUp"
-            android:label="@string/title_activity_sign_up"
+            android:name="com.finalproject.deliveronthego.Registration"
+            android:label="Registration"
             android:parentActivityName="com.finalproject.deliveronthego.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.finalproject.deliveronthego.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.finalproject.deliveronthego.SignUp"
+            android:label="SignUp"
+            android:parentActivityName="com.finalproject.deliveronthego.Registration" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.finalproject.deliveronthego.Registration" />
+        </activity>
+        <activity
+            android:name="com.finalproject.deliveronthego.SignUpDriver"
+            android:label="SignUpDriver"
+            android:parentActivityName="com.finalproject.deliveronthego.Registration" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.finalproject.deliveronthego.Registration" />
         </activity>
     </application>
 
