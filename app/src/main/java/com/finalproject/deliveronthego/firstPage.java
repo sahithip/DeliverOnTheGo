@@ -6,9 +6,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import com.google.android.gms.maps.*;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 
 public class firstPage extends Activity {
+
+    GoogleMap googleMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +24,8 @@ public class firstPage extends Activity {
         textView.setText("Welcome to DeliverOnTheGO");
         setContentView(textView);*/
         setContentView(R.layout.activity_first_page);
+        createMapView();
+        addMarker();
     }
 
 
@@ -42,5 +49,46 @@ public class firstPage extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void createMapView(){
+        /**
+         * Catch the null pointer exception that
+         * may be thrown when initialising the map
+         */
+        try {
+            if(null == googleMap){
+                googleMap = ((MapFragment)getFragmentManager().findFragmentById(R.id.map)).getMap();
+
+                /**
+                 * If the map is still null after attempted initialisation,
+                 * show an error to the user
+                 */
+                if(null == googleMap) {
+                   System.out.print("error creating map");
+                }
+            }
+        } catch (NullPointerException exception){
+            exception.printStackTrace();
+        }
+    }
+
+    private void addMarker(){
+
+        /** Make sure that the map has been initialised **/
+        if(null != googleMap){
+            googleMap.setMyLocationEnabled(true);
+           /* googleMap.addMarker(new MarkerOptions()
+                            .position(new LatLng(0, 0))
+                            .title("Marker")
+                            .draggable(true)
+            );*/
+
+            googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+            final LatLng CIU = new LatLng(35.21843892856462, 33.41662287712097);
+            googleMap.addMarker(new MarkerOptions()
+                    .position(CIU).title("Sample Location"));
+            googleMap.getMyLocation();
+        }
     }
 }
