@@ -14,7 +14,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class firstPage extends Activity {
 
     GoogleMap googleMap;
-
+    SupportMapFragment mapFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +24,7 @@ public class firstPage extends Activity {
         textView.setText("Welcome to DeliverOnTheGO");
         setContentView(textView);*/
         setContentView(R.layout.activity_first_page);
+
         createMapView();
         addMarker();
     }
@@ -52,18 +53,11 @@ public class firstPage extends Activity {
     }
 
     private void createMapView(){
-        /**
-         * Catch the null pointer exception that
-         * may be thrown when initialising the map
-         */
+        googleMap = ((MapFragment)getFragmentManager().findFragmentById(R.id.map)).getMap();
         try {
             if(null == googleMap){
                 googleMap = ((MapFragment)getFragmentManager().findFragmentById(R.id.map)).getMap();
 
-                /**
-                 * If the map is still null after attempted initialisation,
-                 * show an error to the user
-                 */
                 if(null == googleMap) {
                    System.out.print("error creating map");
                 }
@@ -91,4 +85,6 @@ public class firstPage extends Activity {
             googleMap.getMyLocation();
         }
     }
+
+
 }
