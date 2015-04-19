@@ -3,10 +3,68 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Deliver On the Go"
+        android:id="@+id/textView15"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Today&apos;s Travel"
+        android:id="@+id/textView2"
+        android:paddingBottom="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Starting From"
+        android:id="@+id/startLocationLabel" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/startLocation" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Going to"
+        android:id="@+id/endLocationLabel" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/endLocation"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Delivery Size Your Car Can Carry"
+        android:id="@+id/SizeOfDeliveryLabel" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/SizeOfDelivery"
+        android:layout_gravity="center_horizontal"
+        />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start Tracking Location"
-        android:id="@+id/LocationTracker"
+        android:text="Get Requests"
+        android:id="@+id/button"
+
         android:layout_gravity="center_horizontal" />
-</LinearLayout><!-- From: file:/Users/Anita/AndroidStudioProjects/DeliverOnTheGoAndroid/app/src/main/res/layout/activity_driver_first_page.xml -->
+
+</LinearLayout><!-- From: file:/Users/sahithi/Documents/workspace/DeliverOnTheGoAndroid/app/src/main/res/layout/activity_driver_first_page.xml -->

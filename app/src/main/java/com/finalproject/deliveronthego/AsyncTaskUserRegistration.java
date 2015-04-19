@@ -46,7 +46,7 @@ class AsyncTaskUserRegistration extends AsyncTask<String, Integer, Double> {
         } catch (ClientProtocolException e) {
             e.printStackTrace();
         }
-        catch (IOException e) {
+        catch (IOException e){
             e.printStackTrace();
         }
     }

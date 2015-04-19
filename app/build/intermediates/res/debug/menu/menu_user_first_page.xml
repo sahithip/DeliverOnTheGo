@@ -3,4 +3,4 @@
     tools:context="com.finalproject.deliveronthego.CollectDeliveryDetails">
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:showAsAction="never" android:orderInCategory="100"  />
-</menu><!-- From: file:/Users/Anita/AndroidStudioProjects/DeliverOnTheGoAndroid/app/src/main/res/menu/menu_user_first_page.xml -->
+</menu><!-- From: file:/Users/sahithi/Documents/workspace/DeliverOnTheGoAndroid/app/src/main/res/menu/menu_user_first_page.xml -->

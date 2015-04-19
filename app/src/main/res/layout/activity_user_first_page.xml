@@ -3,57 +3,61 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Enter the PickUp Details"
-        android:id="@+id/textView2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="6dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Pick Up Location"
+        android:text="PickUp At"
         android:id="@+id/textView11" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="6dp"
         android:id="@+id/pickUpInput" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingLeft="6dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Drop Off Location"
+        android:text="Drop At"
         android:id="@+id/dropOffLabel" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="6dp"
         android:id="@+id/dropOffInput" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingLeft="6dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Dimensions"
-        android:id="@+id/dimension"
-        android:layout_gravity="left" />
+        android:id="@+id/dimension" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingLeft="6dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Length"
+        android:text="L"
         android:id="@+id/textView12" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:ems="10"
+        android:ems="3"
         android:id="@+id/length"
         android:layout_gravity="center_horizontal" />
 
@@ -61,39 +65,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Breadth"
+        android:paddingLeft="6dp"
+        android:text="B"
         android:id="@+id/textView13"
-        android:layout_gravity="left" />
+        />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:ems="10"
+        android:ems="3"
         android:id="@+id/breadth"
         android:layout_gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingLeft="6dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Width"
+        android:text="W"
         android:id="@+id/textView14" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:ems="10"
+        android:ems="3"
         android:id="@+id/width" />
+        </LinearLayout>
 
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Find Available Drivers"
+        android:layout_marginTop="10dp"
+        android:text="Deliver Me"
         android:id="@+id/findDrivers"
         android:layout_gravity="center_horizontal"
-        android:onClick="clickFindAvailableDrivers" />
+         />
 
 </LinearLayout>

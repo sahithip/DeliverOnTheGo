@@ -1,15 +1,10 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.finalproject.deliveronthego.SignUp"
-    android:id="@+id/textView3">
+<?xml version="1.0" encoding="utf-8"?>
 
-    <TextView android:text="@string/AppName" android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView3" />
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
 
     <LinearLayout
         android:orientation="vertical"
@@ -19,13 +14,14 @@
         android:layout_alignParentStart="true"
         android:weightSum="1"
         android:id="@+id/driverSignUpLayout">
-
-        <FrameLayout
-            android:layout_width="match_parent"
+        <TextView android:text="@string/AppName" android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"></FrameLayout>
+            android:textSize="30dp"
+            android:layout_gravity="center"
+            android:id="@+id/textView3" />
 
-        <FrameLayout
+
+               <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
@@ -41,7 +37,15 @@
                 android:layout_gravity="left|top"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp" />
-
+                   <EditText
+                       android:layout_width="210dp"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/firstName"
+                       android:layout_gravity="right|top"
+                       android:layout_marginLeft="20dp"
+                       android:layout_marginTop="10dp"
+                       android:singleLine="true"
+                       android:visibility="visible" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -51,20 +55,12 @@
                 android:layout_marginTop="70dp"
                 android:layout_marginLeft="10dp" />
 
-            <EditText
-                android:layout_width="210dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/editText"
-                android:layout_gravity="right|top"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:singleLine="true"
-                android:visibility="visible" />
+
 
             <EditText
                 android:layout_width="210dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText5"
+                android:id="@+id/lastName"
                 android:layout_gravity="right|top"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="70dp"
@@ -84,7 +80,7 @@
             <EditText
                 android:layout_width="210dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText4"
+                android:id="@+id/emailid"
                 android:layout_gravity="right|top"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="190dp"
@@ -103,7 +99,7 @@
             <EditText
                 android:layout_width="210dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText6"
+                android:id="@+id/password"
                 android:layout_gravity="right|top"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="250dp"
@@ -122,7 +118,7 @@
             <EditText
                 android:layout_width="210dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText7"
+                android:id="@+id/phoneNumber"
                 android:layout_gravity="right|top"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="320dp"
@@ -133,10 +129,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sign Up as Driver"
-                android:id="@+id/button"
+                android:id="@+id/driverSignup"
                 android:layout_marginTop="400dp"
                 android:layout_marginLeft="100dp"
-                android:onClick="signUpDriver" />
+                 />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -150,7 +146,7 @@
             <EditText
                 android:layout_width="210dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText8"
+                android:id="@+id/driverLicense"
                 android:layout_gravity="right|top"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="130dp"
@@ -161,5 +157,5 @@
 
     </LinearLayout>
 
-</RelativeLayout>
-<!-- From: file:/Users/Anita/AndroidStudioProjects/DeliverOnTheGoAndroid/app/src/main/res/layout/activity_sign_up_driver.xml -->
+</ScrollView>
+<!-- From: file:/Users/sahithi/Documents/workspace/DeliverOnTheGoAndroid/app/src/main/res/layout/activity_sign_up_driver.xml -->

@@ -31,7 +31,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.finalproject.deliveronthego.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,7 +42,8 @@
         <activity
             android:name="com.finalproject.deliveronthego.firstPage"
             android:label="@string/title_activity_first_page"
-            android:parentActivityName="com.finalproject.deliveronthego.CollectDeliveryDetails" >
+            android:parentActivityName="com.finalproject.deliveronthego.CollectDeliveryDetails"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.finalproject.deliveronthego.CollectDeliveryDetails" />
@@ -49,7 +51,8 @@
         <activity
             android:name="com.finalproject.deliveronthego.CollectDeliveryDetails"
             android:label="Get Delivery Details"
-            android:parentActivityName="com.finalproject.deliveronthego.MainActivity" >
+            android:parentActivityName="com.finalproject.deliveronthego.MainActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.finalproject.deliveronthego.MainActivity" />
@@ -57,7 +60,8 @@
         <activity
             android:name="com.finalproject.deliveronthego.Registration"
             android:label="Registration"
-            android:parentActivityName="com.finalproject.deliveronthego.MainActivity" >
+            android:parentActivityName="com.finalproject.deliveronthego.MainActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.finalproject.deliveronthego.MainActivity" />
@@ -65,7 +69,8 @@
         <activity
             android:name="com.finalproject.deliveronthego.SignUp"
             android:label="SignUp"
-            android:parentActivityName="com.finalproject.deliveronthego.Registration" >
+            android:parentActivityName="com.finalproject.deliveronthego.Registration"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.finalproject.deliveronthego.Registration" />
@@ -73,10 +78,38 @@
         <activity
             android:name="com.finalproject.deliveronthego.SignUpDriver"
             android:label="SignUpDriver"
-            android:parentActivityName="com.finalproject.deliveronthego.Registration" >
+            android:parentActivityName="com.finalproject.deliveronthego.Registration"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.finalproject.deliveronthego.Registration" />
+        </activity>
+        <activity
+            android:name="com.finalproject.deliveronthego.DriverHomePage"
+            android:label="DriverHomePage"
+            android:parentActivityName="com.finalproject.deliveronthego.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.finalproject.deliveronthego.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.finalproject.deliveronthego.LocationFragmentActivity"
+            android:label="Location"
+            android:parentActivityName="com.finalproject.deliveronthego.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.finalproject.deliveronthego.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.finalproject.deliveronthego.DeliveryActivity"
+            android:label="Deliver"
+            android:parentActivityName="com.finalproject.deliveronthego.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.finalproject.deliveronthego.MainActivity" />
         </activity>
 
         <meta-data

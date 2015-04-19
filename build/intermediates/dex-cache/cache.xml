@@ -2,39 +2,46 @@
 <items version="2" >
 
     <item
-        jar="/Users/Anita/AndroidStudioProjects/DeliverOnTheGoAndroid/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jar="/Users/sahithi/Documents/workspace/DeliverOnTheGoAndroid/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/Users/Anita/AndroidStudioProjects/DeliverOnTheGoAndroid/app/build/intermediates/pre-dexed/debug/classes-ebdabbf7e36438a93a3a9b1b74b3ad2691945d3c.jar" />
+        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
+        <dex dex="/Users/sahithi/Documents/workspace/DeliverOnTheGoAndroid/app/build/intermediates/pre-dexed/debug/classes-285543abd5cf82abff1e2aebf00459d929a990c7.jar" />
     </item>
     <item
-        jar="/Users/Anita/AndroidStudioProjects/DeliverOnTheGoAndroid/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jar="/Users/sahithi/Development/adt/sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/Users/Anita/AndroidStudioProjects/DeliverOnTheGoAndroid/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-f998c9f50d0fbe4b1afbdfe759c82e34590a64b3.jar" />
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="/Users/sahithi/Documents/workspace/DeliverOnTheGoAndroid/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-8a6264d309f8b2dd492221f09e5e5f48113f608c.jar" />
     </item>
     <item
-        jar="/Users/Anita/AndroidStudioProjects/DeliverOnTheGoAndroid/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jar="/Users/sahithi/Documents/workspace/DeliverOnTheGoAndroid/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/Users/Anita/AndroidStudioProjects/DeliverOnTheGoAndroid/app/build/intermediates/pre-dexed/debug/classes-0c0cac6cd0ba3313b245050d45c4c21c34d69870.jar" />
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="/Users/sahithi/Documents/workspace/DeliverOnTheGoAndroid/app/build/intermediates/pre-dexed/debug/classes-f1f6f39fe7ada8a1724da9c37ebc2956e5477c2a.jar" />
     </item>
     <item
-        jar="/Users/Anita/AndroidStudioProjects/DeliverOnTheGoAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/3.1.36/classes.jar"
+        jar="/Users/sahithi/Documents/workspace/DeliverOnTheGoAndroid/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="/Users/sahithi/Documents/workspace/DeliverOnTheGoAndroid/app/build/intermediates/pre-dexed/debug/classes-0e6771650c633932fe89e20a73c4c38de81bfcf2.jar" />
+    </item>
+    <item
+        jar="/Users/sahithi/Documents/workspace/DeliverOnTheGoAndroid/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="/Users/sahithi/Documents/workspace/DeliverOnTheGoAndroid/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-9f3e6006463090426b0da1a4b2730d298a36a98c.jar" />
+    </item>
+    <item
+        jar="/Users/sahithi/Documents/workspace/DeliverOnTheGoAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/3.1.36/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="7421dcb3ed9db47a59ec618e2398f0df65c2d480">
-        <dex dex="/Users/Anita/AndroidStudioProjects/DeliverOnTheGoAndroid/app/build/intermediates/pre-dexed/debug/classes-106a5ce256b6e79ca9748a7058069acdeca153f5.jar" />
-    </item>
-    <item
-        jar="/Users/Anita/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="/Users/Anita/AndroidStudioProjects/DeliverOnTheGoAndroid/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-277cae282e64e0ffdfbea1eda8c5318169fbbcca.jar" />
+        <dex dex="/Users/sahithi/Documents/workspace/DeliverOnTheGoAndroid/app/build/intermediates/pre-dexed/debug/classes-60fb9aab415fc75bc936fe9d5d68606e75aabbf3.jar" />
     </item>
 
 </items>

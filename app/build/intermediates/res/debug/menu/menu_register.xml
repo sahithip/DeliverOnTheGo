@@ -3,4 +3,4 @@ xmlns:tools="http://schemas.android.com/tools"
 tools:context="com.finalproject.deliveronthego.Registration">
 <item android:id="@+id/action_settings" android:title="@string/action_settings" android:showAsAction="never"
     android:orderInCategory="100"/>
-</menu><!-- From: file:/Users/Anita/AndroidStudioProjects/DeliverOnTheGoAndroid/app/src/main/res/menu/menu_register.xml -->
+</menu><!-- From: file:/Users/sahithi/Documents/workspace/DeliverOnTheGoAndroid/app/src/main/res/menu/menu_register.xml -->
