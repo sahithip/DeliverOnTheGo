@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * Created by Anita on 3/18/15.
  */
-class MyAsyncTaskLogin extends AsyncTask<String, String, HttpResponse> {
+class MyAsyncTaskLogin extends AsyncTask<String, String, String> {
 
     private static final String  TAG = "Login";
     Context context;
@@ -79,26 +79,30 @@ class MyAsyncTaskLogin extends AsyncTask<String, String, HttpResponse> {
     }
 
     @Override
-    protected HttpResponse doInBackground(String... params) {
+    protected String doInBackground(String... params) {
         Log.v("I am here","in background");
         HttpResponse response=postData(params[0],params[1],params[2]);
-        return response;
-    }
-
-    @Override
-    protected void onPostExecute(HttpResponse response)
-    {
         String responseValue="";
         HttpEntity httpEntity = response.getEntity();
         try {
             InputStream content = httpEntity.getContent();
             BufferedReader buffer = new BufferedReader(new InputStreamReader(content));
             String s = "";
-            Log.v("buffer ",buffer+"");
+            Log.v("buffer ", buffer + "");
             while ((s = buffer.readLine()) != null) {
-                Log.i(TAG,"Value"+s);
+                Log.i(TAG, "Value" + s);
                 responseValue += s;
             }
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        return responseValue;
+    }
+
+    @Override
+    protected void onPostExecute(String responseValue)
+    {
+        try {
             JSONObject res = new JSONObject(responseValue);
             Log.v("responseValue ",responseValue);
             String type =(String)res.get("userType");
@@ -117,9 +121,7 @@ class MyAsyncTaskLogin extends AsyncTask<String, String, HttpResponse> {
             }else {
 
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
+        }  catch (JSONException e) {
             e.printStackTrace();
         }
     }

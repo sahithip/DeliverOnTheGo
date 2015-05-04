@@ -103,5 +103,15 @@
         android:id="@+id/findDrivers"
         android:layout_gravity="center_horizontal"
          />
+    <Button
+        android:id="@+id/btnGetRegId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get RegId"/>
+    <EditText
+        android:id="@+id/etRegId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 
 </LinearLayout><!-- From: file:/Users/sahithi/Documents/workspace/DeliverOnTheGoAndroid/app/src/main/res/layout/activity_user_first_page.xml -->

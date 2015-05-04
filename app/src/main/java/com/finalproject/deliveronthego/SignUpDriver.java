@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.gms.gcm.GoogleCloudMessaging;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -37,6 +39,9 @@ public class SignUpDriver extends Activity {
     private EditText password;
     private EditText phoneNumber;
     private Button signupDriver;
+    String projectNumber ="709164501120";
+    GoogleCloudMessaging gcm;
+    String regid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,10 +57,39 @@ public class SignUpDriver extends Activity {
         signupDriver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new MyDriverSignup(getBaseContext()).execute(firstName.getText().toString(),lastName.getText().toString(),password.getText().toString(),driverLicense.getText().toString(),emailid.getText().toString(),phoneNumber.getText().toString());
+                getRegId();
             }
         });
 
+    }
+
+    public void getRegId(){
+        new AsyncTask<Void, Void, String>() {
+            @Override
+            protected String doInBackground(Void... params) {
+                String msg = "";
+                try {
+                    if (gcm == null) {
+                        gcm = GoogleCloudMessaging.getInstance(getApplicationContext());
+                    }
+                    regid = gcm.register(projectNumber);
+                    msg = "Device registered, registration ID=" + regid;
+                    Log.i("GCM", msg);
+
+                } catch (IOException ex) {
+                    msg = "Error :" + ex.getMessage();
+
+                }
+                return msg;
+            }
+
+            @Override
+            protected void onPostExecute(String msg) {
+                Log.v("reg id",msg);
+                new MyDriverSignup(getBaseContext()).execute(firstName.getText().toString(),lastName.getText().toString(),password.getText().toString(),driverLicense.getText().toString(),emailid.getText().toString(),phoneNumber.getText().toString(),msg);
+
+            }
+        }.execute(null, null, null);
     }
 
 
@@ -93,18 +127,18 @@ public class SignUpDriver extends Activity {
             this.context = context.getApplicationContext();
         }
 
-        public HttpResponse postData(String firstName,String lastName, String password, String driverLicense,String emailid,String phoneNo) {
+        public HttpResponse postData(String firstName,String lastName, String password, String driverLicense,String emailid,String phoneNo,String regId) {
             // Create a new HttpClient and Post Header
             HttpResponse response = null;
 
             HttpClient httpclient = new DefaultHttpClient();
-            HttpPost httpPost = new HttpPost("http://192.168.1.53:8080/Dotg/rest/home/driversignup");
+            HttpPost httpPost = new HttpPost("http://10.0.0.8:8080/Dotg/rest/home/driversignup");
 
             try {
                 // Log.v("gggdhd","printing response" + response.toString());
 
                 // Add your data
-                JSONObject typeObject = new JSONObject().put("emailid", emailid).put("password", password).put("firstName",firstName).put("lastName",lastName).put("driverLicense",driverLicense).put("phoneNumber", phoneNo);
+                JSONObject typeObject = new JSONObject().put("emailId", emailid).put("password", password).put("firstName",firstName).put("lastName",lastName).put("driverLicense",driverLicense).put("phoneNumber", phoneNo).put("regId",regId);
 
                 Log.v(firstName + " " + password + " ", "here");
 
@@ -135,12 +169,7 @@ public class SignUpDriver extends Activity {
         @Override
         protected HttpResponse doInBackground(String... params) {
             Log.v("I am here", "in background");
-            HttpResponse response = postData(params[0], params[1], params[2],params[3],params[4],params[5]);
-            return response;
-        }
-
-        @Override
-        protected void onPostExecute(HttpResponse response) {
+            HttpResponse response = postData(params[0], params[1], params[2],params[3],params[4],params[5],params[6]);
             String responseValue = "";
             HttpEntity httpEntity = response.getEntity();
             try {
@@ -167,6 +196,12 @@ public class SignUpDriver extends Activity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            return response;
+        }
+
+        @Override
+        protected void onPostExecute(HttpResponse response) {
+
         }
     }
 }

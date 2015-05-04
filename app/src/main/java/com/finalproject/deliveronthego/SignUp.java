@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.gms.gcm.GoogleCloudMessaging;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -35,20 +37,23 @@ public class SignUp extends Activity {
     private EditText password;
     private EditText phoneNumber;
     private Button signupUser;
+    String projectNumber ="709164501120";
+    GoogleCloudMessaging gcm;
+    String regid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         firstName = (EditText) findViewById(R.id.firstName);
         lastName = (EditText) findViewById(R.id.lastName);
-        emailid = (EditText) findViewById(R.id.emailid);
+        emailid = (EditText) findViewById(R.id.emailId);
         password = (EditText) findViewById(R.id.password);
         phoneNumber = (EditText) findViewById(R.id.phoneNumber);
         signupUser = (Button) findViewById(R.id.userSignup);
         signupUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new MyUserSignup(getBaseContext()).execute(firstName.getText().toString(), lastName.getText().toString(), password.getText().toString(), emailid.getText().toString(), phoneNumber.getText().toString());
+                getRegId();
             }
         });
     }
@@ -59,6 +64,34 @@ public class SignUp extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_sign_up, menu);
         return true;
+    }
+    public void getRegId(){
+        new AsyncTask<Void, Void, String>() {
+            @Override
+            protected String doInBackground(Void... params) {
+                String msg = "";
+                try {
+                    if (gcm == null) {
+                        gcm = GoogleCloudMessaging.getInstance(getApplicationContext());
+                    }
+                    regid = gcm.register(projectNumber);
+                    msg = "Device registered, registration ID=" + regid;
+                    Log.i("GCM", msg);
+
+                } catch (IOException ex) {
+                    msg = "Error :" + ex.getMessage();
+
+                }
+                return msg;
+            }
+
+            @Override
+            protected void onPostExecute(String msg) {
+                Log.v("reg id",msg);
+                new MyUserSignup(getBaseContext()).execute(firstName.getText().toString(), lastName.getText().toString(), password.getText().toString(), emailid.getText().toString(), phoneNumber.getText().toString(),msg);
+
+            }
+        }.execute(null, null, null);
     }
 
     @Override
@@ -84,18 +117,18 @@ public class SignUp extends Activity {
             this.context = context.getApplicationContext();
         }
 
-        public HttpResponse postData(String firstName,String lastName, String password, String emailid,String phoneNo) {
+        public HttpResponse postData(String firstName,String lastName, String password, String emailid,String phoneNo,String regId) {
             // Create a new HttpClient and Post Header
             HttpResponse response = null;
 
             HttpClient httpclient = new DefaultHttpClient();
-            HttpPost httpPost = new HttpPost("http://192.168.1.53:8080/Dotg/rest/home/customersignup");
+            HttpPost httpPost = new HttpPost("http://10.0.0.8:8080/Dotg/rest/home/customersignup");
 
             try {
                 // Log.v("gggdhd","printing response" + response.toString());
 
                 // Add your data
-                JSONObject typeObject = new JSONObject().put("emailid", emailid).put("password", password).put("firstName",firstName).put("lastName",lastName).put("phoneNumber",phoneNo);
+                JSONObject typeObject = new JSONObject().put("emailId", emailid).put("password", password).put("firstName",firstName).put("lastName",lastName).put("phoneNumber",phoneNo).put("regId",regId);
 
                 Log.v(firstName + " " + password + " " , "here");
 
@@ -126,7 +159,7 @@ public class SignUp extends Activity {
         @Override
         protected HttpResponse doInBackground(String... params) {
             Log.v("I am here", "in background");
-            HttpResponse response = postData(params[0], params[1], params[2],params[3],params[4]);
+            HttpResponse response = postData(params[0], params[1], params[2],params[3],params[4],params[5]);
             return response;
         }
 

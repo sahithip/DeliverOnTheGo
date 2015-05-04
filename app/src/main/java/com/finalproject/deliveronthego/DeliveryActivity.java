@@ -6,10 +6,13 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.os.AsyncTask;
 
+import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.io.IOException;
@@ -26,6 +29,11 @@ public class DeliveryActivity extends Activity {
     EditText breadth;
     EditText width;
     Button findDrivers;
+    Button btnRegId;
+    String projectNumber ="709164501120";
+    GoogleCloudMessaging gcm;
+    String regid;
+    EditText etRegId;
 
     @Override
     public void onCreate( Bundle savedInstanceState) {
@@ -33,14 +41,18 @@ public class DeliveryActivity extends Activity {
         setContentView(R.layout.activity_user_first_page);
         Intent intent  = getIntent();
         String text = intent.getStringExtra("dropOff");
+        btnRegId = (Button) findViewById(R.id.btnGetRegId);
         dropOff = (EditText)findViewById(R.id.dropOffInput);
         pickup = (EditText)findViewById(R.id.pickUpInput);
         length = (EditText)findViewById(R.id.length);
         breadth = (EditText)findViewById(R.id.breadth);
         width = (EditText)findViewById(R.id.width);
+        etRegId = (EditText) findViewById(R.id.etRegId);
+
         dropOff.setText(text);
         findDrivers = (Button)findViewById(R.id.findDrivers);
         final String email = intent.getStringExtra("emailid");
+
         findDrivers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,7 +75,39 @@ public class DeliveryActivity extends Activity {
         });
 
 
+        btnRegId.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getRegId();
+            }
+        });
 
+    }
+    public void getRegId(){
+        new AsyncTask<Void, Void, String>() {
+            @Override
+            protected String doInBackground(Void... params) {
+                String msg = "";
+                try {
+                    if (gcm == null) {
+                        gcm = GoogleCloudMessaging.getInstance(getApplicationContext());
+                    }
+                    regid = gcm.register(projectNumber);
+                    msg = "Device registered, registration ID=" + regid;
+                    Log.i("GCM", msg);
 
+                } catch (IOException ex) {
+                    msg = "Error :" + ex.getMessage();
+
+                }
+                return msg;
+            }
+
+            @Override
+            protected void onPostExecute(String msg) {
+                etRegId.setText(msg + "\n");
+                Log.v("reg id",msg);
+            }
+        }.execute(null, null, null);
     }
 }
